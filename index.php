@@ -20,8 +20,15 @@
         <input type="radio" name="kaomoji" value="(  ´；ω；｀)< ">( ´；ω；｀)
         <input type="radio" name="kaomoji" value="（ ´_ゝ`）< ">（ ´_ゝ`）
         <input type="radio" name="kaomoji" value="( ☞◔ ౪◔)☞< ">( ☞◔ ౪◔)☞
-        <br>
-        <input type="text" name="name">
+        <br><br>
+        <input type="text" name="name" value="
+<?php
+        if(isset($_POST['name'])==true) 
+            {
+            echo $_POST['name'];
+            } 
+?>">
+
         <input type="submit" value="吹き出す">
     </form>
 
