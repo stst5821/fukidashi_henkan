@@ -34,18 +34,27 @@
 
     <br>
     <p><?php
+
+    // 三項演算子を使ったバージョン
     
-    if(isset($_POST['name'])==true)
-    {
-        $kaomoji = $_POST['kaomoji'];
-        $text = $_POST['name'];
-        $text = htmlspecialchars($text,ENT_QUOTES,'UTF-8');
-        echo $kaomoji.$text;
-    }
-    else
-    {
-        echo '喋らせたい言葉を入力してね';
-    }
+    $kaomoji = isset($_POST['kaomoji']) ? $_POST['kaomoji'] : "";
+    $text = isset($_POST['name']) ? htmlspecialchars($_POST['name'], ENT_QUOTES, 'UTF-8')  : '喋らせたい言葉を入力してね';
+    echo $kaomoji.$text;
+    
+    // if文を使ったバージョン
+
+    // if(isset($_POST['name'])==true)
+    // {
+    //     $kaomoji = $_POST['kaomoji'];
+    //     $text = $_POST['name'];
+    //     $text = htmlspecialchars($text,ENT_QUOTES,'UTF-8');
+    //     echo $kaomoji.$text;
+    // }
+    // else
+    // {
+    //     echo '喋らせたい言葉を入力してね';
+    // }
+    
 ?> </p>
 
 </body>
