@@ -14,19 +14,30 @@
     <h1>吹き出しジェネレーター</h1>
 
     <form action="index.php" method="post">
+
+
+        <input type="radio" name="kaomoji" value="( *´ω｀*)< " checked>( *´ω｀*)
+        <input type="radio" name="kaomoji" value="(  ´；ω；｀)< ">( ´；ω；｀)
+        <input type="radio" name="kaomoji" value="（ ´_ゝ`）< ">（ ´_ゝ`）
+        <input type="radio" name="kaomoji" value="( ☞◔ ౪◔)☞< ">( ☞◔ ౪◔)☞
+        <br>
         <input type="text" name="name">
         <input type="submit" value="吹き出す">
     </form>
+
     <br>
-    <p>( ´・ω・`)< <?php 
-    if(isset($_POST['name'])==false) {
-        echo '喋らせたい言葉を入力してね';
+    <p><?php
+    
+    if(isset($_POST['name'])==true)
+    {
+        $kaomoji = $_POST['kaomoji'];
+        $text = $_POST['name'];
+        $text = htmlspecialchars($text,ENT_QUOTES,'UTF-8');
+        echo $kaomoji.$text;
     }
     else
     {
-        $text = $_POST['name'];
-        $text = htmlspecialchars($text,ENT_QUOTES,'UTF-8');
-        echo $text;
+        echo '喋らせたい言葉を入力してね';
     }
 ?> </p>
 
